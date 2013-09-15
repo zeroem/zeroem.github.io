@@ -1,0 +1,23 @@
+* {
+  font-family: Helvetica, sans-serif;
+  font-size: 11pt;
+}
+
+body {
+  background-color: #EAEAEA;
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  width: 800px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  background-color: white;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+
+address {
+  float: right;
+}
