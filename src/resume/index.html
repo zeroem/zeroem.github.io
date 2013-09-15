@@ -8,23 +8,26 @@
   </head>
   <body>
     <div id="content">
-      <address>
-        <div>Darrell Hamilton</div>
-        <div>
-          <a href="mailto:darrell.noice@gmail.com">darrell.noice@gmail.com</a>
-        </div>
-        <div>
-          <a href="https://github.com/zeroem">On Github</a>
-        </div>
-      </address>
+      <header>
+        <address>
+          <div>Darrell Hamilton</div>
+          <div>
+            <a href="mailto:darrell.noice@gmail.com">darrell.noice@gmail.com</a>
+          </div>
+          <div>
+            <a href="https://github.com/zeroem">On Github</a>
+          </div>
+        </address>
+      </header>
+      <h1>Employment History</h1>
       <article class="position">
         <header>
-          <div class="company-name">
-            Commission Junction
-          </div>
-          <div class="job-title">
-            Senior Software Engineer in DevOps
-          </div>
+          <h2>
+            <span class="title">Senior Software Engineer in DevOps</span>, 
+            <span class="company">
+              <a href="https://www.cj.com/">Commission Junction</a>
+            <span>
+          </h2>
           <div class="duration">
             February 2013 - Present
           </div>
@@ -41,14 +44,37 @@
             <li>Upgraded build process to Maven 3</li>
             <li>Utilized multi-threaded builds to cut build time from 45 minutes to 10</li>
             <li>Rebuilt the Jenkins Pipeline to be more manageable and comprehenisble</li>
-            <li>Maintained various existing projects
-            <ul>
-              <li>Clojure, Groovy, Java, Python, Scala</li>
-            </ul>
+            <li>Maintained various existing projects:
+              <ul>
+                <li>Clojure, Groovy, Java, Python, Scala</li>
+              </ul>
             </li>
           </ul>
         </div>
       </article>
+      <article class="position">
+        <header>
+          <h2>
+            <span class="title">Software Engineer and Architect</span>,
+            <span class="company"><a href="http://4over.com">4over, Inc</a></span>
+          </h2>
+        </header>
+        <div class="summary">
+          Hired to fill an increasing need for custom software solutions, I quickly grew beyond my original role. I took it upon myself to push for more standardized tooling across the company's portfolio, implement modern development practices, and work with senior management in an effort to monetize internal tools.
+          <div class="tagline">Driver of modernization and innovation</div>
+        </div>
+        <div class="details">
+          <ul>
+            <li>Standardized version control across the company portfolio (sccs, cvs, svn to git)</li>
+            <li>Started the Continuous Integration process</li>
+            <li>Cleaned up and scripted the deployment process</li>
+            <li>Virtualized Webserver Infrastructure</li>
+            <li>Interviewed Developer candiates and recommended positions to be filled</li>
+            <li>Provided training on general software development and new tools being introduced</li>
+          </ul>
+        </div>
+      </article>
+
       <footer>
         Last Updated {{ site.time }}
       </footer>

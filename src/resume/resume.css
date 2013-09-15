@@ -1,4 +1,8 @@
 * {
+  box-sizing: border-box;
+}
+
+html {
   font-family: Helvetica, sans-serif;
   font-size: 11pt;
 }
@@ -12,12 +16,17 @@ body {
 #content {
   width: 800px;
   margin: 0 auto;
-  padding: 5px 10px;
-  background-color: white;
+  padding: 10px;
+  background-color: #FFF;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
 }
 
-address {
-  float: right;
+#content footer {
+  text-align: right;
 }
+
+address {
+  text-align: right;
+}
+
