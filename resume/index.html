@@ -4,10 +4,11 @@
 <html>
   <head>
     <title>Darrell Hamilton, Software Engineer</title>
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
     <link href="resume.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="content">
+    <main>
       <header>
         <address>
           <div>Darrell Hamilton</div>
@@ -26,58 +27,86 @@
             <span class="title">Senior Software Engineer in DevOps</span>, 
             <span class="company">
               <a href="https://www.cj.com/">Commission Junction</a>
-            <span>
-          </h2>
-          <div class="duration">
-            February 2013 - Present
-          </div>
-        </header>
-        <div class="summary">
-          Hired onto the company's fledgeling DevOps team to help evolve the 
-          existing <abbr title="Continuous Integration">CI</abbr> system to a
-          Continuous Delivery and eventually a Continuous Deployment system.
+              <span>
+              </h2>
+              <div class="duration">
+                February 2013 to Present
+              </div>
+            </header>
+            <div class="summary">
+              Hired onto the company's fledgeling DevOps team to help evolve the 
+              existing <abbr title="Continuous Integration">CI</abbr> system to a
+              Continuous Delivery and eventually a Continuous Deployment system.
 
-          <div class="tagline">Modernizer and Janitor</div>
-        </div>
-        <div class="details">
-          <ul>
-            <li>Upgraded build process to Maven 3</li>
-            <li>Utilized multi-threaded builds to cut build time from 45 minutes to 10</li>
-            <li>Rebuilt the Jenkins Pipeline to be more manageable and comprehenisble</li>
-            <li>Maintained various existing projects:
+              <div class="tagline">Modernizer and Janitor</div>
+            </div>
+            <div class="details">
               <ul>
-                <li>Clojure, Groovy, Java, Python, Scala</li>
+                <li>Upgraded build process to Maven 3</li>
+                <li>Utilized multi-threaded builds to cut build time from 45 minutes to 10</li>
+                <li>Rebuilt the Jenkins Pipeline to be more manageable, comprehenisble, and parallelized</li>
+                <li>Maintained various existing projects:
+                  <ul>
+                    <li>Clojure, Groovy, Java, Python, Scala</li>
+                  </ul>
+                </li>
               </ul>
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article class="position">
-        <header>
-          <h2>
-            <span class="title">Software Engineer and Architect</span>,
-            <span class="company"><a href="http://4over.com">4over, Inc</a></span>
-          </h2>
-        </header>
-        <div class="summary">
-          Hired to fill an increasing need for custom software solutions, I quickly grew beyond my original role. I took it upon myself to push for more standardized tooling across the company's portfolio, implement modern development practices, and work with senior management in an effort to monetize internal tools.
-          <div class="tagline">Driver of modernization and innovation</div>
-        </div>
-        <div class="details">
-          <ul>
-            <li>Standardized version control across the company portfolio (sccs, cvs, svn to git)</li>
-            <li>Started the Continuous Integration process</li>
-            <li>Cleaned up and scripted the deployment process</li>
-            <li>Virtualized Webserver Infrastructure</li>
-            <li>Interviewed Developer candiates and recommended positions to be filled</li>
-            <li>Provided training on general software development and new tools being introduced</li>
-          </ul>
-        </div>
-      </article>
-
-      <footer>
-        Last Updated {{ site.time }}
-      </footer>
-    </div>
-  </body>
-</html>
+            </div>
+          </article>
+          <article class="position">
+            <header>
+              <h2>
+                <span class="title">Software Engineer and Architect</span>,
+                <span class="company"><a href="http://4over.com">4over, Inc</a></span>
+              </h2>
+              <div class="duration">
+                April 2009 through January 2013
+              </div>
+            </header>
+            <div class="description">
+              <div class="summary">
+                Hired to fill an increasing need for custom software solutions, I quickly grew beyond my original role. I took it upon myself to push for more standardized tooling across the company's portfolio, implement modern development practices, and work with senior management in an effort to monetize internal tools.
+                <div class="tagline">Driver of modernization and innovation</div>
+              </div>
+              <div class="details">
+                <ul>
+                  <li>Pushed for a more <abbr title="Service Oriented Architecture">SOA</abbr> approach for internal systems</li>
+                  <li>Implemented a Continuous Integration process using Jenkins CI</li>
+                  <li>Virtualized Webserver Infrastructure</li>
+                  <li>Standardized version control across the company portfolio (sccs, cvs, svn to git)</li>
+                  <li>Cleaned up and scripted the deployment process</li>
+                  <li>Interviewed Developer candiates and recommended positions to be filled</li>
+                  <li>Provided training on general software development and new tools being introduced</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="position">
+            <header>
+              <h2>
+                <span class="title">Software Programmer</span>,
+                <span class="company"><a href="http://xldynamics.com">XL Dynamics, Inc</a></span>
+              </h2>
+              <div class="duration">
+                April 2006 to August 2008
+              </div>
+            </header>
+            <div class="description">
+              <div class="summary">
+                Hired to help maintain and extend a legacy application server for mortgage origination.
+                <div class="tagline">Code Monkey</div>
+              </div>
+              <div class="details">
+                <ul>
+                  <li>Maintained Legacy Application Server</li>
+                  <li>Implemented Import/Export tools for industry standard data formats</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <footer>
+            Last Updated {{ site.time }}
+          </footer>
+        </main>
+      </body>
+    </html>

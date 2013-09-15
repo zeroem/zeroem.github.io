@@ -3,20 +3,18 @@
 }
 
 html {
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica;
   font-size: 11pt;
 }
 
 body {
   background-color: #EAEAEA;
-  margin: 0;
-  padding: 0;
 }
 
-#content {
+main {
   width: 800px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 5% 5% 2%;
   background-color: #FFF;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
@@ -26,7 +24,14 @@ body {
   text-align: right;
 }
 
+h2 {
+  font-family: Georgia;
+}
+
 address {
   text-align: right;
 }
 
+.tagline::before {
+  content: "Tagline: "
+}
