@@ -55,6 +55,7 @@ address {
 
 .tech ul, .tech li{
   display: inline;
+  line-height: 1.5em;
 }
 
 .tech ul {
