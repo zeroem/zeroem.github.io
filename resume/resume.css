@@ -40,6 +40,7 @@ header {
 
 article {
   border-bottom: 1px solid lightgray;
+  padding-bottom: .5em;
 }
 
 address {
@@ -52,3 +53,15 @@ address {
   margin-bottom: 5px;
 }
 
+.tech ul, .tech li{
+  display: inline;
+}
+
+.tech ul {
+  padding: 0;
+}
+
+.tech li {
+  border: 1px solid lightgray;
+  padding: 0 .25em;
+}
