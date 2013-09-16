@@ -14,7 +14,7 @@ body {
 main {
   width: 800px;
   margin: 0 auto;
-  padding: 2% 5% 2%;
+  padding: 2em 5% 1em;
   background-color: #FFF;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
@@ -24,14 +24,31 @@ main footer {
   text-align: right;
 }
 
-h2 {
+.title, .company {
+  font-size: 1.5em;
+}
+
+.title {
   font-family: Georgia;
+  font-weight: bold;
+}
+
+header {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+article {
+  border-bottom: 1px solid lightgray;
 }
 
 address {
   text-align: right;
 }
 
-.tagline::before {
-  content: "Tagline: "
+.tagline {
+  font-size: 1em;
+  font-style: italic;
+  margin-bottom: 5px;
 }
+
