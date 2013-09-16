@@ -14,13 +14,13 @@ body {
 main {
   width: 800px;
   margin: 0 auto;
-  padding: 5% 5% 2%;
+  padding: 2% 5% 2%;
   background-color: #FFF;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
 }
 
-#content footer {
+main footer {
   text-align: right;
 }
 
