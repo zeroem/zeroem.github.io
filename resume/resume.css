@@ -3,7 +3,7 @@
 }
 
 html {
-  font-family: Helvetica;
+  font-family: Arial;
   font-size: 11pt;
 }
 
@@ -22,10 +22,16 @@ main {
 
 main footer {
   text-align: right;
+  border-top: 1px solid lightgray;
+  padding-top: .25em;
 }
 
 .title, .company {
   font-size: 1.5em;
+}
+
+.company a {
+  text-decoration: none;
 }
 
 .title {
@@ -35,20 +41,17 @@ main footer {
 
 header {
   margin-bottom: 15px;
-  margin-top: 15px;
-}
-
-article {
-  border-bottom: 1px solid lightgray;
-  padding-bottom: .5em;
 }
 
 address {
   text-align: right;
 }
 
+.duration {
+  font-style: italic;
+}
+
 .tagline {
-  font-size: 1em;
   font-style: italic;
   margin-bottom: 5px;
 }
@@ -66,3 +69,14 @@ address {
   border: 1px solid lightgray;
   padding: 0 .25em;
 }
+
+#who p, #what article {
+  padding: .5em 1em;
+  text-align: justify;
+  margin-bottom: 1em;
+}
+
+main article:nth-child(odd) {
+  background-color: #EEE;
+}
+
