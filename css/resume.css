@@ -26,7 +26,7 @@ main footer {
   padding-top: .25em;
 }
 
-.title, .company {
+.title, .company, .degree {
   font-size: 1.5em;
 }
 
@@ -34,7 +34,7 @@ main footer {
   text-decoration: none;
 }
 
-.title {
+.title, .degree {
   font-family: Georgia;
   font-weight: bold;
 }
