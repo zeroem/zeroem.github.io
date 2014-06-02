@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: san-serif;
+  font-size: 12pt;
+}
+
+body {
+  background-color: #eaeaea;
+}
+
+main {
+  width: 800px;
+  margin: 0 auto;
+  padding: 2em 5% 1em;
+  background-color: white;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+
+main footer {
+  text-align: right;
+  border-top: 1px solid lightgray;
+  padding-top: .25em;
+}
+
+header {
+  margin-bottom: 15px;
+}
+
+address {
+  text-align: right;
+}
+
+code {
+  background-color: #eaeaea;
+}
+
+.highlight code {
+  background-color: none
+}
