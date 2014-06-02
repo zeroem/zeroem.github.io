@@ -15,7 +15,7 @@ main {
   width: 800px;
   margin: 0 auto;
   padding: 2em 5% 1em;
-  background-color: #FFF;
+  background-color: white;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
 }
