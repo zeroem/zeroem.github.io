@@ -5,10 +5,13 @@ tags: clojure map jvm
 ---
 # Sometimes You Feel Like a Map
 
-Creating your own data type that behaves like a map is pretty straight forward, the tricky part is figuring out
-which interfaces you need to implement to enable the different parts of Clojure\'s map API.
+Creating your own data type that behaves like a map is pretty straight forward. The tricky part is figuring out
+which interfaces you need to implement to enable the different parts of Clojure\'s map API. The following is an
+overview of what is necessary to make your custom type behave like a map on the JVM.
 
 ## `clojure.lang.Associative`
+
+The `Associative` interface gives us some building blocks that we\'ll be able to reuse later on.
 
 {% highlight clojure %}
   Associative
@@ -17,19 +20,18 @@ which interfaces you need to implement to enable the different parts of Clojure\
   (assoc [this key value])
 {% endhighlight %}
 
-The `Associative` interface gives us some basic building blocks that we\'ll be able to reuse later on.
-
-### Gotchas
-  - `containsKey` must return `true` or `false` or something that can be cast to `java.lang.Boolean`, otherwise you\' get a `ClassCastException`
-  - `entryAt` should return an `IMapEntry` if the key exists, `nil` otherwise. Your best bet is to just use `clojure.lang.MapEntry`.
+### Watch Out
+  - `containsKey` must return `true` or `false` or something that can be cast to `java.lang.Boolean`, otherwise you\'ll get a `ClassCastException`
+  - `entryAt` should return an `IMapEntry` if the key exists, `nil` otherwise. Your best bet is to return a `clojure.lang.MapEntry`.
 
 ### API Calls
-
   - `assoc`
   - `contains?`
   - `find`
 
 ## `clojure.lang.ILookup`
+
+Again, some building blocks for later, this is also a great place to reuse the `containsKey` from the `Associative` interface.
 
 {% highlight clojure %}
   ILookup
@@ -37,19 +39,26 @@ The `Associative` interface gives us some basic building blocks that we\'ll be a
   (valAt [this k not-found])
 {% endhighlight %}
 
-Again, some building blocks for later, this is also a great place to reuse the `containsKey` from before. The `ILookup` interface lets us query by keyword, eg `(:kwd foo)`.
-
 ### API Calls
+  - `(:kwd foo)`
+  - `(:kwd foo 'default')`
   - `get`
   - `get-in`
 
 ## `clojure.lang.IFn`
+
+The `IFn` interface is what allows your map to be called as a function (See API Calls below).
 
 {% highlight clojure %}
   IFn
   (invoke [this k])
   (invoke [this k not-found])
 {% endhighlight %}
+
+### API Calls
+  - `(your-map :kwd)`
+  - `(your-map :kwd 'default')`
+
 
 By defining `invoke` for one and two parameters, you can use instances of your map as a function, eg `(foo :kwd)`.
 
@@ -63,7 +72,7 @@ By defining `invoke` for one and two parameters, you can use instances of your m
   (equiv [this o])
 {% endhighlight %}
 
-### Gotchas
+### Watch Out
   - `empty` _is not_ the same thing as `empty?`. It should return whatever an "empty" representation of your map is.
   - `equiv` will only apply to comparing other things to your map, but not the other way. Eg. `(= your-map thing)` will hit your implementation of `equiv`, but `(= thing your-map)` will not.
 
@@ -98,30 +107,18 @@ Having already implemented `Associative`, we get a free pass on this `assoc`. `a
 
 This one is pretty simple, but it unlocks so much. And remember, `seq` should return `nil` if your map is empty.
 
+### Watch Out
+  - Remember, `seq` should return `nil` if your map is empty.
+
 ### API Calls
   - `seq`
   - `keys`
   - `vals`
   - `empty?`
-  - `partition-by`
-  - `partition-all`
-  - `reductions`
   - `map`
-  - `map-indexed`
-  - `keep`
-  - `keep-indexed`
-  - `concat`
-  - `select-keys`
-  - `sequence`
   - `some`
   - `filter`
-  - `remove`
-  - `take`
-  - `take-while`
-  - `drop`
-  - `drop-while`
-  - `take-last`
-  - `cycle`
+  - `select-keys`
   - etc.
 
 ## `java.lang.Iterable`
