@@ -108,14 +108,16 @@ The `Seqable` interface is by far the biggest bang for the buck. Implement one f
   - Remember, `seq` should return `nil` if your map is empty.
 
 ### API Calls
-  - `seq`
-  - `keys`
-  - `vals`
   - `empty?`
-  - `map`
-  - `some`
   - `filter`
+  - `first`
+  - `rest`
+  - `keys`
+  - `map`
   - `select-keys`
+  - `seq`
+  - `some`
+  - `vals`
   - etc.
 
 ## `java.lang.Iterable`
