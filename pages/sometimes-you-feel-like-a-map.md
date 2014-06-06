@@ -11,7 +11,7 @@ overview of what is necessary to make your custom type behave like a map on the 
 
 ## `clojure.lang.Associative`
 
-The `Associative` interface gives us some building blocks that we\'ll be able to reuse later on.
+The `Associative` interface gives you the APIs necessary to put stuff into your map and check to see that it\'s there.
 
 {% highlight clojure %}
   Associative
@@ -31,7 +31,7 @@ The `Associative` interface gives us some building blocks that we\'ll be able to
 
 ## `clojure.lang.ILookup`
 
-Again, some building blocks for later, this is also a great place to reuse the `containsKey` from the `Associative` interface.
+Where `Associative` lets you add to your map, `ILookup` provides the API for getting things out again.
 
 {% highlight clojure %}
   ILookup
@@ -59,9 +59,6 @@ The `IFn` interface is what allows your map to be called as a function (See API 
   - `(your-map :kwd)`
   - `(your-map :kwd 'default')`
 
-
-By defining `invoke` for one and two parameters, you can use instances of your map as a function, eg `(foo :kwd)`.
-
 ## `clojure.lang.IPersistentCollection`
 
 {% highlight clojure %}
@@ -85,6 +82,8 @@ By defining `invoke` for one and two parameters, you can use instances of your m
 
 ## `clojure.lang.IPersistentMap`
 
+Having already implemented `Associative`, we get a free pass on this `assoc`. `assocEx` is pretty much the same except that it throws an exception if the key already exists. `without` has the same behavior as `dissoc`.
+
 {% highlight clojure %}
   IPersistentMap
   (assoc [this k v])
@@ -92,20 +91,18 @@ By defining `invoke` for one and two parameters, you can use instances of your m
   (without [this k])
 {% endhighlight %}
 
-Having already implemented `Associative`, we get a free pass on this `assoc`. `assocEx` is pretty much the same except that it throws an exception if the key already exists. And without is basically `dissoc`.
-
 ### API Calls
   - `assoc`
   - `dissoc`
 
 ## `clojure.lang.Seqable`
 
+The `Seqable` interface is by far the biggest bang for the buck. Implement one function and you get a sizable chunk of the map and collection APIs.
+
 {% highlight clojure %}
   Seqable
-  (seq [this o])
+  (seq [this])
 {% endhighlight %}
-
-This one is pretty simple, but it unlocks so much. And remember, `seq` should return `nil` if your map is empty.
 
 ### Watch Out
   - Remember, `seq` should return `nil` if your map is empty.
@@ -123,13 +120,19 @@ This one is pretty simple, but it unlocks so much. And remember, `seq` should re
 
 ## `java.lang.Iterable`
 
+Seeing as you\'ve already implemented `seq`, this one is a no brainer. You can simply wrap the result of calling `seq` on your map into a `clojure.lang.SeqIterator` and call it a day.
+
 {% highlight clojure %}
   Iterable
   (iterator [this])
 {% endhighlight %}
 
-Seeing as you\'ve already implemented `seq`, this one is a no brainer. You can simply wrap the result of calling `seq` into a `clojure.lang.SeqIterator` and call it a day.
-
 ### API Calls
   - `reduce`
   - `reduce-kv`
+
+## Wrap Up
+
+You should now have a custom type that you can treat just like any other map. You can find examples of other custom maps in [crosshair](https://github.com/matross/crosshair), [mapstache](https://github.com/matross/mapstache), and [strata](https://github.com/matross/strata).
+
+If you notice mistakes, typo or otherwise, feel free to let me know [@thenandagain](https://twitter.com/thenandagain) on Twitter, or [send a pull request](https://github.com/zeroem/zeroem.github.io).
