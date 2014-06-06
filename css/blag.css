@@ -14,25 +14,11 @@ body {
 main {
   width: 800px;
   margin: 0 auto;
-  padding: 2em 5% 1em;
+  padding: 1.5em 5% 1em;
   background-color: white;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
   min-height: 100%
-}
-
-main footer {
-  text-align: right;
-  border-top: 1px solid lightgray;
-  padding-top: .25em;
-}
-
-header {
-  margin-bottom: 15px;
-}
-
-address {
-  text-align: right;
 }
 
 code {
