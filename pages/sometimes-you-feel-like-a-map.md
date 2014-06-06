@@ -111,9 +111,9 @@ The `Seqable` interface is by far the biggest bang for the buck. Implement one f
   - `empty?`
   - `filter`
   - `first`
-  - `rest`
   - `keys`
   - `map`
+  - `rest`
   - `select-keys`
   - `seq`
   - `some`
